@@ -1,0 +1,33 @@
+export default {
+  breakpoints: {
+    xs: 0,
+    sm: 576,
+    md: 768,
+    lg: 992,
+    xl: 1200,
+  },  
+  color: {
+    white: "#fff",
+    gray100: "#f8f9fa",
+    gray200: "#ecf0f1",
+    gray300: "#dee2e6",
+    gray400: "#ced4da",
+    gray500: "#b4bcc2",
+    gray600: "#95a5a6",
+    gray700: "#7b8a8b",
+    gray800: "#343a40",
+    gray900: "#212529",
+    black: "#000",
+
+    blue: "#2C3E50",
+    indigo: "#6610f2",
+    purple: "#6f42c1",
+    pink: "#e83e8c",
+    red: "#E74C3C",
+    orange: "#fd7e14",
+    yellow: "#F39C12",
+    green: "#18BC9C",
+    teal: "#20c997",
+    cyan: "#3498DB",
+  },
+};
