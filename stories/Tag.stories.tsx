@@ -1,8 +1,6 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import { linkTo } from "@storybook/addon-links";
 import { Tag } from "../src/Tag";
 
 storiesOf("Tag", module)
@@ -12,6 +10,6 @@ storiesOf("Tag", module)
   .add("Tag With Info Number", () => (
     <Tag>
       Tag with number
-      <Tag ml="2px" p="2px" color={"info"}>1</Tag>
+      <Tag ml="2px" color={"info"}>1</Tag>
     </Tag>
   ));

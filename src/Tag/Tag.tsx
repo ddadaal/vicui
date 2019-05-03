@@ -10,11 +10,11 @@ export interface TagColor {
   fontColor?: string;
 }
 
-interface Props extends SpaceProps, FontSizeProps {
+export interface TagProps extends SpaceProps, FontSizeProps {
   color?: PresetTagColor | TagColor;
 }
 
-function getColor(props: Props & { theme: Theme }): TagColor {
+function getColor(props: TagProps & { theme: Theme }): TagColor {
   if (typeof props.color === "string") {
     return props.theme.colors.tag[props.color];
   } else {
@@ -22,7 +22,7 @@ function getColor(props: Props & { theme: Theme }): TagColor {
   }
 }
 
-const Tag = styled.span<Props>`
+export const Tag = styled.span<TagProps>`
   display: inline-block;
   
   background-color: ${(props) => getColor(props).bg};
@@ -44,7 +44,7 @@ const Tag = styled.span<Props>`
 
 Tag.defaultProps = {
   color: "normal",
-  fontSize: "12px",
+  fontSize: 0,
   p: "4px",
 };
 

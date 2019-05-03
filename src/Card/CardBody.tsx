@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import { space, SpaceProps } from "styled-system";
 
-interface Props extends SpaceProps {
+export interface CardBodyProps extends SpaceProps {
 
 }
 
-const CardBody = styled.div<Props>`
+export const CardBody = styled.div<CardBodyProps>`
   flex: 1 1 auto;
-  padding: 20px;
-
   ${space}
 `;
+
+CardBody.defaultProps = {
+  p: 3,
+};
 
 export default CardBody;

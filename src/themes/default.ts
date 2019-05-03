@@ -1,6 +1,6 @@
 const palette = {
   white: "#fff",
-  gray: [
+  grays: [
     "#f8f9fa",
     "#ecf0f1",
     "#dee2e6",
@@ -11,11 +11,15 @@ const palette = {
     "#343a40",
     "#212529",
   ],
-  black: [
+  blacks: [
     "rgba(0,0,0,1)",
+    "rgba(0,0,0,0.875)",
     "rgba(0,0,0,0.75)",
+    "rgba(0,0,0,0.625)",
     "rgba(0,0,0,0.5)",
+    "rgba(0,0,0,0.375)",
     "rgba(0,0,0,0.25)",
+    "rgba(0,0,0,0.125)",
   ],
   blue: "#2C3E50",
   indigo: "#6610f2",
@@ -37,6 +41,7 @@ const boxShadows = [
 ];
 
 export default {
+  name: "default",
   breakpoints: {
     xs: 0,
     sm: 576,
@@ -48,14 +53,18 @@ export default {
     palette,
     card: {
       bg: palette.white,
-      border: palette.black[3],
+      border: palette.blacks[7],
       onHoverBoxShadow: boxShadows[2],
+      header: {
+        bg: palette.blacks[7],
+        borderBottom: palette.blacks[7],
+      },
     },
     tag: {
       normal: {
-        bg: palette.gray[1],
-        hoverBg: palette.gray[3],
-        fontColor: palette.black[0],
+        bg: palette.grays[1],
+        hoverBg: palette.grays[3],
+        fontColor: palette.blacks[0],
       },
       info: {
         bg: palette.cyan,
@@ -64,13 +73,13 @@ export default {
     },
   },
   animations: {
-    duration: {
+    durations: {
       fast: `150ms`,
       normal: `300ms`,
       slow: `450ms`,
       slowest: `600ms`,
     },
-    transitionDelay: {
+    transitionDelays: {
       small: `60ms`,
       medium: `160ms`,
       large: `260ms`,
@@ -78,4 +87,5 @@ export default {
     },
 
   },
+  fontSizes: [ 12, 14, 16, 20, 24, 32, 48, 64, 96 ],
 };

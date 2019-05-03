@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { space, SpaceProps } from "styled-system";
+import { space, SpaceProps, maxWidth, MaxWidthProps } from "styled-system";
 
-interface Props extends SpaceProps {
+export interface CardProps extends SpaceProps, MaxWidthProps {
 
 }
 
-const Card = styled.div<Props>`
+export const Card = styled.div<CardProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -15,16 +15,15 @@ const Card = styled.div<Props>`
   background-clip: border-box;
   border: 1px solid ${(props) => props.theme.colors.card.border};
 
-  transition: all ${(props) => props.theme.animations.duration} ease-in-out;
+  transition: all ${(props) => props.theme.animations.durations.fast} ease-in-out;
 
   ${space}
+  ${maxWidth}
 
   &:hover {
     box-shadow: ${(props) => props.theme.colors.card.onHoverBoxShadow};
 
   }
 `;
-
-export { Card };
 
 export default Card;
