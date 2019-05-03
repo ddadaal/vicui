@@ -1,8 +1,8 @@
 import defaultTheme from "./default";
-import baseStyled, { ThemedStyledInterface } from 'styled-components';
+import baseStyled, { ThemedStyledInterface } from "styled-components";
 import ThemeProvider from "./ThemeProvider";
 
-type Theme = typeof defaultTheme;
+export type Theme = typeof defaultTheme;
 const styled = baseStyled as ThemedStyledInterface<Theme>;
 
-export { defaultTheme, Theme, styled, ThemeProvider };
+export { defaultTheme, styled, ThemeProvider };

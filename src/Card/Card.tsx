@@ -1,7 +1,7 @@
-import React from "react";
 import styled from "styled-components";
+import { space, SpaceProps } from "styled-system";
 
-interface Props {
+interface Props extends SpaceProps {
 
 }
 
@@ -11,16 +11,20 @@ const Card = styled.div<Props>`
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: ${(props) => props.theme.color.white};
+  background-color: ${(props) => props.theme.colors.card.bg};
   background-clip: border-box;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 1px solid ${(props) => props.theme.colors.card.border};
 
-  transition: all .2s ease-in-out;
+  transition: all ${(props) => props.theme.animations.duration} ease-in-out;
+
+  ${space}
 
   &:hover {
-    box-shadow: 0rem .2rem .4rem rgba(0,0,0,.3);
-    margin-top: 16px;
+    box-shadow: ${(props) => props.theme.colors.card.onHoverBoxShadow};
+
   }
 `;
+
+export { Card };
 
 export default Card;

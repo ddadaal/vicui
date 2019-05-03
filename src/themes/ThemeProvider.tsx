@@ -1,5 +1,5 @@
 import React from "react";
-import { Theme, defaultTheme } from '.';
+import { Theme, defaultTheme } from ".";
 import { ThemeProvider as BaseThemeProvider, DefaultTheme } from "styled-components";
 
 interface Props {
@@ -13,8 +13,8 @@ export default function ThemeProvider(props: Props) {
       {props.children as any}
     </BaseThemeProvider>
   );
-};
+}
 
 ThemeProvider.defaultProps = {
-  theme: defaultTheme
+  theme: defaultTheme,
 };

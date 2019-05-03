@@ -20,7 +20,7 @@
     ]
   },
   "include": [
-    "src/**/*"
+    "src/**/*", "stories/Card.stories.tsx", "stories/Tag.stories.tsx", "stories/index.stories.tsx"
   ],
   "exclude": [
     "node_modules"
