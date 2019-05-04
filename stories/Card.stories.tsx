@@ -2,8 +2,7 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import { Card, CardBody, CardHeader } from "../src/Card";
-import { Flexbox } from "../src/primitives";
+import { Card, CardBody, CardHeader, Flexbox } from "../src";
 
 storiesOf("Card", module)
   .add("Normal Card", () => (

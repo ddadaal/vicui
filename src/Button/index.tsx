@@ -12,15 +12,11 @@ interface ButtonProps extends SpaceProps, MaxWidthProps, VariantProps<"buttons">
 
 export const Button = styled.div<ButtonProps>`
 
-  &:hover {
-    opacity: 0.8;
-  }
+  ${(props) => props.theme.buttons.common}
 
-  &:active {
-    opacity: 0.6;
-  }
+  user-select: none;
 
-  ${(props) => props.theme.animations.normalTransition}
+  transition: all 60ms ease-in-out;
 
   ${space}
   ${buttonVariant}
@@ -29,8 +25,8 @@ export const Button = styled.div<ButtonProps>`
 
 Button.defaultProps = {
   variant: "default",
-  p: 1,
-  maxWidth: "300px",
+  p: 2,
+  maxWidth: "200px",
 };
 
 export default Button;

@@ -22,7 +22,8 @@ export const Tag = styled.span<TagProps>`
     cursor: normal;
   }
 
-  ${(props) => props.theme.animations.normalTransition}
+  user-select: none;
+
 
   ${tagVariant}
 

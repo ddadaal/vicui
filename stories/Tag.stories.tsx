@@ -1,7 +1,7 @@
 import React from "react";
 
 import { storiesOf } from "@storybook/react";
-import { Tag } from "../src/Tag";
+import { Tag } from "../src";
 
 storiesOf("Tag", module)
   .add("Tag", () => (
