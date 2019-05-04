@@ -1,51 +1,43 @@
 import styled from "styled-components";
-import { SpaceProps, FontSizeProps, fontSize, space } from "styled-system";
-import { Theme } from "../themes";
+import {
+  SpaceProps, FontSizeProps, fontSize, space, ColorProps,
+  color, variant,
+  backgroundColor, BackgroundColorProps,
+ } from "styled-system";
+import VariantProps from "../utils/variant";
 
-type PresetTagColor = keyof Theme["colors"]["tag"];
+const tagVariant = variant({
+  key: "tags",
+});
 
-export interface TagColor {
-  bg: string;
-  hoverBg?: string;
-  fontColor?: string;
-}
-
-export interface TagProps extends SpaceProps, FontSizeProps {
-  color?: PresetTagColor | TagColor;
-}
-
-function getColor(props: TagProps & { theme: Theme }): TagColor {
-  if (typeof props.color === "string") {
-    return props.theme.colors.tag[props.color];
-  } else {
-    return props.color!!;
-  }
+export interface TagProps extends SpaceProps, FontSizeProps, ColorProps, BackgroundColorProps, VariantProps<"tags"> {
 }
 
 export const Tag = styled.span<TagProps>`
   display: inline-block;
-  
-  background-color: ${(props) => getColor(props).bg};
-  
+
   &:hover {
-    background-color: ${(props) => getColor(props).hoverBg};
+    opacity: 0.8;
     text-decoration: none;
     cursor: normal;
   }
-  
-  transition: background-color 0.2s linear;
 
-  color: ${(props) => getColor(props).fontColor};
+  ${(props) => props.theme.animations.normalTransition}
+
+  ${tagVariant}
 
   ${fontSize}
   ${space}
- 
+  ${color}
+  ${backgroundColor}
+
+
 `;
 
 Tag.defaultProps = {
-  color: "normal",
+  variant: "normal",
   fontSize: 0,
-  p: "4px",
+  p: 1,
 };
 
 export default Tag;

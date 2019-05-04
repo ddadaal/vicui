@@ -5,11 +5,14 @@ import { Tag } from "../src/Tag";
 
 storiesOf("Tag", module)
   .add("Tag", () => (
-    <Tag>Normal Tag</Tag>
+    <div>
+      <Tag>Normal Tag</Tag>
+      <Tag variant="info">Info Tag</Tag>
+    </div>
   ))
   .add("Tag With Info Number", () => (
     <Tag>
-      Tag with number
-      <Tag ml="2px" color={"info"}>1</Tag>
+      JavaScript
+      <Tag ml={1} variant={"info"}>1</Tag>
     </Tag>
   ));

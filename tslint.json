@@ -20,7 +20,8 @@
     "jsx-no-lambda": false,
     "no-trailing-whitespace": false,
     "array-type": false,
-    "no-shadowed-variable": false
+    "no-shadowed-variable": false,
+    "object-literal-key-quotes": false
   },
   "rulesDirectory": []
 }

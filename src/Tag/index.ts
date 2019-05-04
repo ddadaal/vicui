@@ -1,4 +1,3 @@
-import Tag, { TagColor, TagProps } from "./Tag";
-export type TagColor = TagColor;
+import Tag, { TagProps } from "./Tag";
 export type TagProps = TagProps;
 export { Tag };

@@ -16,11 +16,31 @@
 	// 	"description": "Log output to console"
 	// }
 	"Export a type": {
-		"scope": "typescript,tsx",
+		"scope": "typescriptreact,typescript",
 		"prefix": "exty",
 		"body": [
 			"export type $1 = $1;",
 		],
 		"description": "Re-export a type."
+	},
+	"New Component": { 
+		"scope": "typescriptreact,typescript",
+		"prefix": "newcomp",
+		"body": [
+			"import styled from \"styled-components\";",
+			"import { $0 } from \"styled-system\";",
+			"",
+			"interface $1Props {",
+			"",
+			"}",
+			"",
+			"export const $1 = styled.div<$1Props>`",
+			"",
+			"`;",
+			"",
+			"export default $1;",
+			""
+		],
+		"description": "Create a new Element"
 	}
 }

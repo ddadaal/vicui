@@ -7,8 +7,7 @@ export interface CardHeaderProps extends SpaceProps {
 
 export const CardHeader = styled.div<CardHeaderProps>`
   margin-bottom: 0;
-  background-color: ${(props) => props.theme.colors.card.header.bg};
-  border-bottom: 1px solid ${(props) => props.theme.colors.card.header.bg};
+  ${(props) => props.theme.cards.header}
 
   ${space}
 

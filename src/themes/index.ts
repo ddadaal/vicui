@@ -1,8 +1,12 @@
-import defaultTheme from "./default";
-import baseStyled, { ThemedStyledInterface } from "styled-components";
+import baseTheme from "./baseTheme";
+import light from "./colors/light";
 import ThemeProvider from "./ThemeProvider";
 
-export type Theme = typeof defaultTheme;
-const styled = baseStyled as ThemedStyledInterface<Theme>;
+export type BaseTheme = typeof baseTheme;
+export type ColorMode = typeof light;
 
-export { defaultTheme, styled, ThemeProvider };
+export const defaultTheme = baseTheme(light);
+
+export type Theme = typeof defaultTheme;
+
+export { ThemeProvider };
