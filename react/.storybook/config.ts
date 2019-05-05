@@ -4,8 +4,8 @@ import {addDecorator} from "@storybook/react";
 import {withThemesProvider} from "storybook-addon-styled-component-theme";
 import { withInfo } from "@storybook/addon-info";
 
-import { defaultTheme} from "../src/themes";
- 
+import { defaultTheme, ThemeProvider} from "../src/themes";
+
 const req = require.context("../stories", true, /\.stories\.tsx$/);
 
 function loadStories() {
@@ -15,6 +15,6 @@ function loadStories() {
 const themes = [defaultTheme];
 
 addDecorator(withInfo({ inline: true }));
-addDecorator(withThemesProvider(themes));
+addDecorator(ThemeProvider);
 
 configure(loadStories, module);

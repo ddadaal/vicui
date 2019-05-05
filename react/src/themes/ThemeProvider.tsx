@@ -1,5 +1,5 @@
 import React from "react";
-import { Theme, defaultTheme } from ".";
+import { Theme, defaultTheme } from "../themes";
 import { ThemeProvider as BaseThemeProvider, DefaultTheme } from "styled-components";
 
 interface Props {

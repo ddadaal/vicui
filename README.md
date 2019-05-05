@@ -1,13 +1,22 @@
 # VicUI
 
-A component-based UI Library & Design System built from ground up with [styled-system](https://styled-system.com/).
+A component-based UI Library & Design System built from ground up.
 
 **UNDER EARLY DEVELOPMENT**
 
 ## Features
 
-- Component-based design system from ground up
-- Theme-driven with two default themes provided
+### Core
+
+- PostCSS with only nesting enabled
+- Expose CSS variables for customization
+- Default light & dark themes provided
+
+### React
+
+- Wrappers around core package
+- Supercharged with [styled-system](https://styled-system.com)
+- Easy interoperatability with CSS
 - Written in TypeScript
 - Preview via [Storybook](https://storybook.js.org)
 
@@ -17,11 +26,12 @@ Clone, `yarn` then `yarn storybook`
 
 ## Todo List
 
-- [ ] Button
+- [x] Button
 - [x] Card
 - [x] Tag
 - [ ] Dropdown
 - [ ] Layout
+- [x] Input
 
 ## License
 
