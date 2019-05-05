@@ -15,12 +15,6 @@ export const Card = styled.div<CardProps>`
 
   ${(props) => props.theme.cards.card};
 
-
-  &:hover {
-    box-shadow: ${(props) => props.theme.boxShadows[0]};
-    transform: translate3d(0, -4px, 0);
-  }
-
   ${(props) => props.theme.animations.normalTransition}
 
   ${space}

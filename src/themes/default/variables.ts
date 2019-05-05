@@ -5,7 +5,7 @@ export const boxShadows = [
   `0 25.6px 57.6px 0 rgba(0,0,0,.22), 0 4.8px 14.4px 0 rgba(0,0,0,.18)`,
 ];
 
-export const palette = {
+const palette = {
   white: "#fff",
   gray: [
       "#f8f9fa",
@@ -49,8 +49,8 @@ export const palette = {
   ],
 };
 
-export const importantColors = {
-  normal: palette.gray[1],
+const importantColors = {
+  normal: palette.gray[2],
   focused: palette.gray[5],
   primary: palette.cyanBlue[0],
   success: palette.green,
@@ -59,6 +59,44 @@ export const importantColors = {
   danger: palette.red,
 };
 
-export const borders = [
-  `1px solid `,
-];
+export default {
+  cards: {
+    card: {
+      bg: palette.white,
+      borderColor: importantColors.normal,
+    },
+    header: {
+      bg: palette.gray[1],
+    },
+  },
+  tags: {
+    normal: {
+      bg: importantColors.normal,
+      fontColor: palette.black[0],
+    },
+    info: {
+      bg: importantColors.info,
+      fontColor: palette.white,
+    },
+  },
+  buttons: {
+    borderColor: importantColors.normal,
+    default: {
+      bg: palette.white,
+      fontColor: palette.black[0],
+      hoverBg: palette.gray[2],
+      activeBg: palette.gray[3],
+    },
+    primary: {
+      bg: importantColors.primary,
+      fontColor: palette.white,
+    },
+  },
+  inputs: {
+    input: {
+      normalBorderColor: importantColors.normal,
+      hoverBorderColor: importantColors.focused,
+      activeBorderColor: importantColors.info,
+    },
+  },
+};
