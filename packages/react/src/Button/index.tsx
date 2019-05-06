@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { space, SpaceProps, maxWidth, MaxWidthProps  } from "styled-system";
-import "../../styles/button.css";
+import "vicui-core/styles/button.pcss";
 
 interface ButtonProps extends SpaceProps, MaxWidthProps {
   variant?: "default" | "primary";

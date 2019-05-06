@@ -1,5 +1,7 @@
 # VicUI
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
 A component-based UI Library & Design System built from ground up.
 
 **UNDER EARLY DEVELOPMENT**

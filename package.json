@@ -1,0 +1,26 @@
+{
+  "name": "vicui",
+  "version": "0.0.1",
+  "description": "vicui",
+  "dependencies": {},
+  "devDependencies": {
+    "lerna": "^3.13.4"
+  },
+  "scripts": {
+    "lerna-bootstrap": "lerna bootstrap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viccrubs/vicui.git"
+  },
+  "keywords": [
+    "postcss",
+    "react"
+  ],
+  "author": "Chen Junda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viccrubs/vicui/issues"
+  },
+  "homepage": "https://github.com/viccrubs/vicui#readme"
+}
