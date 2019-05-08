@@ -1,7 +1,5 @@
 # VicUI
 
-[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
-
 A component-based UI Library & Design System built from ground up.
 
 **UNDER EARLY DEVELOPMENT**
@@ -24,9 +22,17 @@ A component-based UI Library & Design System built from ground up.
 
 ## Preview
 
-`yarn link` from `react` to `core`
+IMPORTANT: `yarn link` from `react` to `core`
 
-Clone, `yarn` then `yarn storybook`
+```shell
+
+# Develop core
+yarn dev-core
+
+# Develop react
+yarn dev-react
+
+```
 
 ## Todo List
 
