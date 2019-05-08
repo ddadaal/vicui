@@ -24,6 +24,8 @@ A component-based UI Library & Design System built from ground up.
 
 ## Preview
 
+`yarn link` from `react` to `core`
+
 Clone, `yarn` then `yarn storybook`
 
 ## Todo List

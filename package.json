@@ -1,21 +1,21 @@
 {
   "name": "vicui",
-  "version": "0.0.1",
-  "description": "vicui",
-  "dependencies": {},
-  "devDependencies": {
-    "lerna": "^3.13.4"
-  },
+  "version": "1.0.0",
+  "description": "a component-based ui library",
+  "main": "index.js",
   "scripts": {
-    "lerna-bootstrap": "lerna bootstrap"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-core": "cd core && yarn dev",
+    "dev-react": "cd core && yarn dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viccrubs/vicui.git"
   },
   "keywords": [
-    "postcss",
-    "react"
+    "styled-components",
+    "styled-system",
+    "postcss"
   ],
   "author": "Chen Junda",
   "license": "MIT",
