@@ -120,3 +120,8 @@ $RECYCLE.BIN/
 
 # files containing sensitive information
 localdeploy.sh
+
+# ??
+**/.rpt2_cache
+
+**/dist

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-core": "cd core && yarn dev",
-    "dev-react": "cd core && yarn dev"
+    "dev-react": "cd react && yarn storybook",
+    "init-dev": "cd core && yarn && yarn link && cd ../react && yarn && yarn link \"vicui-core\""
   },
   "repository": {
     "type": "git",

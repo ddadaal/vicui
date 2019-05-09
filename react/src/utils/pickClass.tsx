@@ -13,14 +13,12 @@ export default function pickClass<Props extends { className?: string }>(
 
     const NewComponent: typeof WrapperComponent = (props: Props) => {
 
-      const modifier = getModifier(props);
-
       return (
         <WrapperComponent
           {...props}
           className={[
             prefixedClassName,
-            modifier ? `${prefixedClassName}_${modifier}` : null,
+            getModifier(props),
             props.className,
           ].filter((x) => x).join(" ")}
         />

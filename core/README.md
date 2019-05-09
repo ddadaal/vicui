@@ -9,7 +9,7 @@ Core package of VicUI
 # Features
 
 - PostCSS with only nesting enabled
-- Class names adhere to BEM naming convention
+- Close to BEM naming convention
 - Expose CSS variables for customization
 - Default light & dark themes provided
 

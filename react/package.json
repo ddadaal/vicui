@@ -15,7 +15,7 @@
     "build": "yarn run lint && yarn run clean:dist && cross-env NODE_ENV=production rollup -c",
     "clean:dist": "rimraf dist",
     "watch": "rollup -cw",
-    "start": "rollup -cw",
+    "dev": "rollup -cw",
     "lint": "tslint '{src,tests}/**/*.{ts,tsx}' --fix",
     "test": "",
     "release": "yarn run build && standard-version",
