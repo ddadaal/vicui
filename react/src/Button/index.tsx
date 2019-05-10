@@ -1,18 +1,30 @@
 import styled from "styled-components";
-import { space, SpaceProps, maxWidth, MaxWidthProps } from "styled-system";
+import {
+  fontWeight,
+  borders,
+  borderColor,
+  borderRadius,
+  FontWeightProps,
+  BordersProps,
+  BorderColorProps,
+  BorderRadiusProps,
+} from "styled-system";
 import "vicui-core/styles/button.pcss";
 import pickClass from "../utils/pickClass";
 import VariantProps from "../utils/variant";
+import { BoxProps, Box } from "..";
 
-export interface ButtonProps extends SpaceProps, MaxWidthProps,
+export interface ButtonProps extends BoxProps, FontWeightProps, BordersProps, BorderColorProps, BorderRadiusProps,
   VariantProps<"default" | "primary"> {
 }
 
-export const Button = pickClass(styled.div<ButtonProps>`
+export const Button = pickClass(styled(Box) <ButtonProps>`
 
   && {
-    ${space}
-    ${maxWidth}
+    ${fontWeight}
+    ${borders}
+    ${borderColor}
+    ${borderRadius}
   }
 
 `)("btn", (props) => {
@@ -20,9 +32,9 @@ export const Button = pickClass(styled.div<ButtonProps>`
 });
 
 Button.defaultProps = {
+  as: "button",
   variant: "default",
   p: 2,
-  maxWidth: "200px",
 };
 
 export default Button;

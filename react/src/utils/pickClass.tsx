@@ -2,6 +2,10 @@ import React from "react";
 
 const VU_PREFIX = "vu-";
 
+export function addClasses(baseClassName: string, modifier?: string, other?: string) {
+  return [baseClassName, modifier, other].filter((x) => x).join(" ");
+}
+
 export default function pickClass<Props extends { className?: string }>(
   WrapperComponent: React.ComponentType<Props> | string,
 ) {
@@ -16,11 +20,11 @@ export default function pickClass<Props extends { className?: string }>(
       return (
         <WrapperComponent
           {...props}
-          className={[
+          className={addClasses(
             prefixedClassName,
             getModifier(props),
             props.className,
-          ].filter((x) => x).join(" ")}
+          )}
         />
       );
     };

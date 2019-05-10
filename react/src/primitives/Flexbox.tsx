@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { Box, BoxProps } from "./Box";
-import { 
-    FlexWrapProps, FlexDirectionProps, AlignItemsProps, JustifyContentProps, 
+import {
+    FlexWrapProps, FlexDirectionProps, AlignItemsProps, JustifyContentProps,
     flexWrap, flexDirection, alignItems, justifyContent,
 } from "styled-system";
 
-export interface FlexboxProps 
+export interface FlexboxProps
 extends BoxProps, FlexWrapProps, FlexDirectionProps, AlignItemsProps, JustifyContentProps { }
 
-export const Flexbox = styled(Box)({
+export const Flexbox = styled(Box)<FlexboxProps>({
   display: "flex",
 },
   flexWrap,
