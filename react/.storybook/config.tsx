@@ -1,7 +1,7 @@
 import { configure } from "@storybook/react";
 // automatically import all files ending in *.stories.tsx
-import {addDecorator} from "@storybook/react";
-import {withThemesProvider} from "storybook-addon-styled-component-theme";
+import { addDecorator } from "@storybook/react";
+import { withThemesProvider } from "storybook-addon-styled-component-theme";
 import { withInfo } from "@storybook/addon-info";
 import React from "react";
 
@@ -14,6 +14,10 @@ function loadStories() {
 }
 
 addDecorator(withInfo({ inline: true }));
-addDecorator((storyFn) => <ThemeProvider>{storyFn()}</ThemeProvider>);
+addDecorator((Story: any) => (
+  <ThemeProvider>
+    <Story />
+  </ThemeProvider>
+));
 
 configure(loadStories, module);
