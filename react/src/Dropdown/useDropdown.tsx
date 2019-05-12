@@ -1,44 +1,28 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useCallback } from "react";
 import { useEventListener } from "../utils/hooksUtils";
 
-let dropdownStack = [] as ({ close: () => void, ref: React.RefObject<HTMLDivElement> })[];
-
 export interface DropdownData {
-  toggle: () => void;
+  toggle: (e: { stopPropagation: () => void }) => void;
   open: boolean;
-  ref: React.RefObject<HTMLDivElement>;
 }
 
-export default function useDropdown(defaultOpen: boolean = false): DropdownData {
-  const ref = useRef<HTMLDivElement>(null);
+export function useDropdown(defaultOpen: boolean = false): DropdownData {
 
   const [open, setOpen] = useState(defaultOpen);
-  const toggle = useCallback(() => {
-    if (!open) {
-      dropdownStack.push({
-        close: () => setOpen(false),
-        ref,
-      });
-      setOpen(true);
-    } else {
-      dropdownStack = dropdownStack.filter((x) => x.ref === ref);
-      setOpen(false);
-    }
-  }, [open, dropdownStack]);
+  const toggle = useCallback((e: { stopPropagation: () => void }) => {
+    e.stopPropagation();
+    setOpen(!open);
+  }, [open]);
 
-  const closeTopDropdownStack = useCallback((e: MouseEvent) => {
-    const top = dropdownStack.pop();
-    if (top) {
-      top.close();
-    }
+  const close = useCallback(() => {
+    setOpen(false);
   }, []);
 
-  // useEventListener(window, "onclick", closeTopDropdownStack);
-  // useEventListener(window, "ontouchstart", closeTopDropdownStack);
+  useEventListener(window, "click", close);
+  useEventListener(window, "touchstart", close);
 
   return {
     toggle,
-    ref,
     open,
   };
 }

@@ -2,10 +2,10 @@ import React, { useState } from "react";
 
 import { storiesOf } from "@storybook/react";
 
-import { Dropdown, Button, DropdownMenu, DropdownHeader, DropdownItem, DropdownDivider, Flexbox } from "../src";
+import { Dropdown, Button, DropdownMenu, DropdownHeader, DropdownItem, DropdownDivider, Flexbox, useDropdown } from "../src";
 
 function ControlledDropdownDemo() {
-  const [open, setOpen] = useState(true);
+  const { toggle, open } = useDropdown(false);
 
   return (
     <Dropdown menu={
@@ -17,7 +17,7 @@ function ControlledDropdownDemo() {
         <DropdownItem>Item 3</DropdownItem>
       </DropdownMenu>
     } open={open}>
-      <Button variant="primary" onClick={() => setOpen(!open)}>Dropdown here</Button>
+      <Button variant="primary" onClick={toggle}>Dropdown here</Button>
     </Dropdown>
   );
 }
