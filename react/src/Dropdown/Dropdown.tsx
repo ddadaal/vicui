@@ -1,39 +1,37 @@
-import React, { forwardRef, PropsWithChildren } from "react";
+import React, { forwardRef, PropsWithChildren, useRef } from "react";
 import "vicui-core/styles/dropdown.pcss";
 import pickClass from "../utils/pickClass";
-import { Box } from "..";
-import { BoxProps } from "../primitives";
+import { Flexbox, FlexboxProps } from "../primitives";
+import DropdownMenu from "./DropdownMenu";
 
-export interface DropdownProps extends BoxProps {
-  menu: React.ReactNode;
+type MenuAlignment = "left" | "right";
+
+export interface DropdownProps extends FlexboxProps {
+  trigger: React.ReactNode;
   open?: boolean;
   className?: string;
+  menuAlignment?: MenuAlignment;
 }
 
-const MenuContainer = forwardRef<HTMLDivElement, PropsWithChildren<{ className?: string, open?: boolean }>>(
-  ({ className, open, children }, ref) => {
+export const Dropdown = pickClass<DropdownProps>(
+  ({ children, open, trigger, className, menuAlignment }) => {
     return (
-      <Box display={open ? "block" : "none"} ref={ref} className={className}>
-        {children}
-      </Box>
+      <Flexbox
+        flexDirection="column"
+        alignItems={menuAlignment === "right" ? "flex-end" : "flex-start"}
+        className={className}
+      >
+        {trigger}
+        <DropdownMenu show={open}>
+          {children}
+        </DropdownMenu>
+      </Flexbox>
     );
-  },
-);
-
-export const Dropdown = pickClass<DropdownProps>(({ children, open, menu, className }) => {
-  const menuRef = React.useRef<HTMLDivElement>(null);
-  return (
-    <Box className={className}>
-      {children}
-      <MenuContainer open={open} ref={menuRef}>
-        {menu}
-      </MenuContainer>
-    </Box>
-  );
-})("dropdown");
+  })("dropdown");
 
 Dropdown.defaultProps = {
   open: false,
+  menuAlignment: "left",
 };
 
 export default Dropdown;

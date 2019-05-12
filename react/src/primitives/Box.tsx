@@ -2,11 +2,12 @@ import styled from "styled-components";
 import {
   space, width, fontSize, color, flex, order, alignSelf,
   SpaceProps, WidthProps, FontSizeProps, ColorProps, FlexProps, OrderProps, AlignSelfProps,
-  display, DisplayProps,
+  display, DisplayProps, maxWidth, MaxWidthProps
 } from "styled-system";
 
 export interface BoxProps
-  extends DisplayProps, SpaceProps, WidthProps, FontSizeProps, ColorProps, FlexProps, OrderProps, AlignSelfProps { }
+  extends DisplayProps, SpaceProps, WidthProps, FontSizeProps,
+  ColorProps, FlexProps, OrderProps, AlignSelfProps, MaxWidthProps { }
 
 export const Box = styled.div<BoxProps>({
   boxSizing: "border-box",
@@ -19,4 +20,5 @@ export const Box = styled.div<BoxProps>({
   flex,
   order,
   alignSelf,
+  maxWidth,
 );

@@ -6,27 +6,34 @@ interface StoppableEvent {
 }
 
 export interface DropdownData {
-  toggle: (e: StoppableEvent) => void;
   open: boolean;
+  setOpen: (open: boolean) => (e: StoppableEvent) => void;
+  toggle: (e: StoppableEvent) => void;
 }
 
 export function useDropdown(defaultOpen: boolean = false): DropdownData {
 
   const [open, setOpen] = useState(defaultOpen);
-  const toggle = useCallback((e: StoppableEvent) => {
-    e.stopPropagation();
-    setOpen(!open);
-  }, [open]);
 
-  const close = useCallback(() => {
+  const wrappedSetOpen = useCallback((open: boolean) => (e: StoppableEvent) => {
+    e.stopPropagation();
+    setOpen(open);
+  }, [setOpen]);
+
+  const toggle = useCallback((e: StoppableEvent) => {
+    wrappedSetOpen(!open)(e);
+  }, [open, wrappedSetOpen]);
+
+  const close = useCallback((e: MouseEvent | TouchEvent) => {
     setOpen(false);
-  }, []);
+  }, [setOpen]);
 
   useEventListener(window, "click", close);
   useEventListener(window, "touchstart", close);
 
   return {
     toggle,
+    setOpen: wrappedSetOpen,
     open,
   };
 }
