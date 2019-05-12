@@ -6,6 +6,10 @@ export function addClasses(baseClassName: string, modifier?: string, other?: str
   return [baseClassName, modifier, other].filter((x) => x).join(" ");
 }
 
+export interface HasClassname {
+  className?: string;
+}
+
 export default function pickClass<Props extends { className?: string }>(
   WrapperComponent: React.ComponentType<Props> | string,
 ) {

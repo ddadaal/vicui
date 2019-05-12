@@ -1,15 +1,14 @@
 import "vicui-core/styles/dropdown.pcss";
 
-import pickClass from "../utils/pickClass";
+import pickClass, { HasClassname } from "../utils/pickClass";
 import styled from "styled-components";
 import { Box, BoxProps } from "..";
 
-export interface DropdownDividerProps extends BoxProps {
+export interface DropdownDividerProps extends BoxProps, HasClassname {
 
 }
 
-export const DropdownDivider = pickClass(styled(Box) <DropdownDividerProps>`
-`)("dropdown__divider");
+export const DropdownDivider = pickClass<DropdownDividerProps>(Box)("dropdown__divider");
 
 DropdownDivider.defaultProps = {
 };

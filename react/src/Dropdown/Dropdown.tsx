@@ -1,12 +1,12 @@
 import React, { forwardRef, PropsWithChildren, useRef } from "react";
 import "vicui-core/styles/dropdown.pcss";
 import pickClass from "../utils/pickClass";
-import { Flexbox, FlexboxProps } from "../primitives";
+import { Box, BoxProps } from "../primitives";
 import DropdownMenu from "./DropdownMenu";
 
 type MenuAlignment = "left" | "right";
 
-export interface DropdownProps extends FlexboxProps {
+export interface DropdownProps extends BoxProps {
   trigger: React.ReactNode;
   open?: boolean;
   className?: string;
@@ -15,17 +15,18 @@ export interface DropdownProps extends FlexboxProps {
 
 export const Dropdown = pickClass<DropdownProps>(
   ({ children, open, trigger, className, menuAlignment }) => {
+
+    const menuRef = useRef<HTMLDivElement>(null);
+
     return (
-      <Flexbox
-        flexDirection="column"
-        alignItems={menuAlignment === "right" ? "flex-end" : "flex-start"}
+      <Box
         className={className}
       >
         {trigger}
-        <DropdownMenu show={open}>
+        <DropdownMenu show={open} ref={menuRef}>
           {children}
         </DropdownMenu>
-      </Flexbox>
+      </Box>
     );
   })("dropdown");
 

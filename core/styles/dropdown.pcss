@@ -2,9 +2,12 @@
   position: relative;
 
   &__menu {
+    position: absolute;
+    z-index: 1000;
     display: none;
+    min-width: var(--dropdown-min-width);
 
-    min-width: 160px;
+
     background-color: var(--dropdown-menu-bg);
     border: var(--dropdown-menu-border);
 
