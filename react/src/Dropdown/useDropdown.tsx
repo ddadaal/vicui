@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from "react";
+import { useState, useCallback } from "react";
 import { useEventListener } from "../utils/hooksUtils";
 
 interface StoppableEvent {
@@ -17,8 +17,10 @@ export function useDropdown(defaultOpen: boolean = false): DropdownData {
 
   // the event of toggle must be stopped to prevent it from reaching window
   // where window would close the menu
-  const wrappedSetOpen = useCallback((open: boolean) => (e: StoppableEvent) => {
-    e.stopPropagation();
+  const wrappedSetOpen = useCallback((open: boolean) => (e?: StoppableEvent) => {
+    if (e) {
+      e.stopPropagation();
+    }
     setOpen(open);
   }, [setOpen]);
 

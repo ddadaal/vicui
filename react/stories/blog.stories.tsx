@@ -2,14 +2,18 @@ import React from "react";
 
 import { storiesOf } from "@storybook/react";
 import { Flexbox, Dropdown, Button, useDropdown, DropdownHeader, DropdownItem, DropdownDivider } from "../src";
+import styled from "styled-components";
 
-function NavbarLink({ children }: { children: React.ReactNode }) {
-  return (
-    <Flexbox alignItems="center" justifyContent="center" >
-      {children}
-    </Flexbox>
-  );
-}
+const NavbarLink = styled(Flexbox)`
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+
+  &:hover {
+    color: var(--color-primary);
+    cursor: pointer;
+  }
+`;
 
 function LanguageSwitcher() {
   const { toggle, open } = useDropdown(false);

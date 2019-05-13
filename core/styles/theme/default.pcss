@@ -57,6 +57,14 @@
   --orange-20: #ca5010;
   --orange-30: #8e562e;
 
+
+
+  /* box-shadow */
+  --boxshadow-4: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
+  --boxshadow-8: 0 3.2px 7.2px 0 rgba(0,0,0,.132), 0 0.6px 1.8px 0 rgba(0,0,0,.108);
+  --boxshadow-16: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108);
+  --boxshadow-32: 0 25.6px 57.6px 0 rgba(0,0,0,.22), 0 4.8px 14.4px 0 rgba(0,0,0,.18);
+
   /* important colors */
   --color-normal: var(--gray-40);
   --color-primary: var(--cyanblue-10);
@@ -65,11 +73,14 @@
   --color-warning: var(--yellow);
   --color-danger: var(--red-10);
 
-  /* box-shadow */
-  --boxshadow-4: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);
-  --boxshadow-8: 0 3.2px 7.2px 0 rgba(0,0,0,.132), 0 0.6px 1.8px 0 rgba(0,0,0,.108);
-  --boxshadow-16: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108);
-  --boxshadow-32: 0 25.6px 57.6px 0 rgba(0,0,0,.22), 0 4.8px 14.4px 0 rgba(0,0,0,.18);
+  --color-body: var(--gray-20);
+  --color-bg: var(--white);
+  --color-font: var(--black);
+  --color-font-reversed: var(--white);
+  --color-gray: var(--gray-30);
+  --color-grayer: var(--gray-50);
+  --color-grayest: var(--gray-70);
+  --color-dark: var(--gray-170);
 
   /* borders */
   --border-normal: 1px solid ;
@@ -81,43 +92,42 @@
   --transition-slower: all 250ms ease-in-out;
 
   /* buttons */
-  --btn-default-outline: var(--border-normal) var(--color-normal);
-  --btn-default-bg: var(--white);
-  --btn-default-color: var(--black);
-  --btn-default-hover-bg: var(--gray-50);
-  --btn-default-active-bg: var(--gray-70);
+  --btn-default-outline: var(--border-normal) var(--color-gray);
+  --btn-default-bg: var(--color-bg);
+  --btn-default-color: var(--color-font);
+  --btn-default-hover-bg: var(--color-grayer);
+  --btn-default-active-bg: var(--color-grayest);
 
   --btn-primary-bg: var(--color-primary);
-  --btn-primary-color: var(--white);
+  --btn-primary-color: var(--color-font-reversed);
 
   /* tags */
-  --tag-default-bg: var(--gray-30);
-  --tag-default-color: var(--black);
+  --tag-default-bg: var(--color-gray);
+  --tag-default-color: var(--color-font);
   --tag-info-bg: var(--color-info);
-  --tag-info-color: var(--white);
+  --tag-info-color: var(--color-font-reversed);
 
   /* cards */
-  --card-bg: var(--white);
-  --card-border: var(--border-normal) var(--color-normal);
-  --card-header-bg: var(--gray-30);
+  --card-bg: var(--color-bg);
+  --card-border: var(--border-normal) var(--color-grayer);
+  --card-header-bg: var(--color-gray);
 
   /* input */
-  --input-border: var(--border-normal) var(--color-normal);
-  --input-hover-border: var(--border-normal) var(--gray-150);
+  --input-border: var(--border-normal) var(--color-gray);
+  --input-hover-border: var(--border-normal) var(--color-grayest);
   --input-active-border: var(--border-normal) var(--color-primary);
 
   /* dropdown */
-  --dropdown-menu-bg: var(--white);
-  --dropdown-menu-border: var(--border-normal) var(--color-normal);
-  --dropdown-min-width: 120px;
+  --dropdown-menu-bg: var(--color-bg);
+  --dropdown-menu-border: var(--border-normal) var(--color-gray);
 
   --dropdown-item-padding: 4px 20px;
-  --dropdown-item-color: var(--black);
-  --dropdown-item-hover-bg: var(--color-normal);
-  --dropdown-item-hover-color: var(--black);
+  --dropdown-item-color: var(--color-font);
+  --dropdown-item-hover-bg: var(--color-gray);
+  --dropdown-item-hover-color: var(--color-font);
   --dropdown-item-active-bg: var(--color-primary);
-  --dropdown-item-active-color: var(--white);
-  --dropdown-divider-color: var(--color-normal);
-  --dropdown-header-color: var(--gray-130);
+  --dropdown-item-active-color: var(--color-font-reversed);
+  --dropdown-divider-color: var(--color-gray);
+  --dropdown-header-color: var(--color-dark);
   --dropdown-header-padding: 8px 20px;
 }

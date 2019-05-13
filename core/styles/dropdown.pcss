@@ -1,12 +1,12 @@
 .vu-dropdown {
+  display: inline-block;
   position: relative;
 
   &__menu {
     position: absolute;
     z-index: 1000;
     display: none;
-    min-width: var(--dropdown-min-width);
-
+    width: 100%;
 
     background-color: var(--dropdown-menu-bg);
     border: var(--dropdown-menu-border);
@@ -31,7 +31,7 @@
     &:hover {
       background-color: var(--dropdown-item-hover-bg);
       color: var(--dropdown-item-hover-color);
-
+      cursor: pointer;
     }
 
     &.active, &:focus, &:active {

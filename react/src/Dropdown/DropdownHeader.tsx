@@ -1,16 +1,15 @@
 import "vicui-core/styles/dropdown.pcss";
 
-import pickClass, { HasClassname } from "../utils/pickClass";
+import pickClass from "../utils/pickClass";
 import styled from "styled-components";
 import { Box, BoxProps } from "..";
 
-export interface DropdownHeaderProps extends BoxProps, HasClassname {
+export interface DropdownHeaderProps extends BoxProps {
 
 }
 
-styled
-
-export const DropdownHeader = pickClass<DropdownHeaderProps>(Box)("dropdown__header");
+export const DropdownHeader = pickClass(styled(Box) <DropdownHeaderProps>`
+`)("dropdown__header");
 
 DropdownHeader.defaultProps = {
   as: "h6",
