@@ -12,7 +12,7 @@ import {
 import "vicui-core/styles/button.pcss";
 import pickClass from "../utils/pickClass";
 import VariantProps from "../utils/variant";
-import { BoxProps, Box } from "..";
+import { BoxProps, Box } from "../primitives";
 
 export interface ButtonProps extends BoxProps, FontWeightProps, BordersProps, BorderColorProps, BorderRadiusProps,
   VariantProps<"default" | "primary"> {

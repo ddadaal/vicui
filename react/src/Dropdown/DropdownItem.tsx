@@ -2,7 +2,7 @@ import "vicui-core/styles/dropdown.pcss";
 
 import pickClass from "../utils/pickClass";
 import styled from "styled-components";
-import { Box, BoxProps } from "..";
+import { Box, BoxProps } from "../primitives";
 
 export interface DropdownItemProps extends BoxProps {
   active?: boolean;

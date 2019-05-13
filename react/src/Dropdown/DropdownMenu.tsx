@@ -1,6 +1,6 @@
 import pickClass from "../utils/pickClass";
 import styled from "styled-components";
-import { Box, BoxProps } from "..";
+import { Box, BoxProps } from "../primitives";
 
 export interface DropdownMenuProps extends BoxProps {
   show?: boolean;

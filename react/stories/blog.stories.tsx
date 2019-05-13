@@ -7,10 +7,11 @@ import styled from "styled-components";
 const NavbarLink = styled(Flexbox)`
   align-items: center;
   justify-content: center;
-  margin: 0 8px;
+  padding: 0 8px;
 
   &:hover {
-    color: var(--color-primary);
+    background-color: var(--color-primary);
+    color: var(--color-font-reversed);
     cursor: pointer;
   }
 `;

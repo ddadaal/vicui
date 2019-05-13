@@ -5,13 +5,13 @@ interface StoppableEvent {
   stopPropagation(): void;
 }
 
-export interface DropdownData {
+export interface DropdownControl {
   open: boolean;
   setOpen: (open: boolean) => (e: StoppableEvent) => void;
   toggle: (e: StoppableEvent) => void;
 }
 
-export function useDropdown(defaultOpen: boolean = false): DropdownData {
+export function useDropdown(defaultOpen: boolean = false): DropdownControl {
 
   const [open, setOpen] = useState(defaultOpen);
 

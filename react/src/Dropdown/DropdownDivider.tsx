@@ -1,7 +1,7 @@
 import "vicui-core/styles/dropdown.pcss";
 
 import pickClass from "../utils/pickClass";
-import { Box, BoxProps } from "..";
+import { Box, BoxProps } from "../primitives";
 import styled from "styled-components";
 
 export interface DropdownDividerProps extends BoxProps {

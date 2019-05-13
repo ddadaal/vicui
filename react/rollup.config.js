@@ -20,7 +20,7 @@ const plugins = [
       nested(),
       atImport(),
     ],
-    extract: "build/vicui-core.css",
+    extract: "dist/vicui.css",
     minimize: true,
   }),
 ];
