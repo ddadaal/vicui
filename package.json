@@ -1,27 +1,62 @@
 {
   "name": "vicui",
-  "version": "1.0.0",
-  "description": "a component-based ui library",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-core": "cd core && yarn dev",
-    "dev-react": "cd react && yarn storybook",
-    "init-dev": "cd core && yarn && yarn link && cd ../react && yarn && yarn link \"vicui-core\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/viccrubs/vicui.git"
-  },
-  "keywords": [
-    "styled-components",
-    "styled-system",
-    "postcss"
-  ],
-  "author": "Chen Junda",
+  "version": "0.1.0",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/viccrubs/vicui/issues"
+  "main": "dist/vicui.cjs.js",
+  "module": "dist/vicui.es.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "styled-components": "^4.2.0",
+    "styled-system": "^4.2.2"
   },
-  "homepage": "https://github.com/viccrubs/vicui#readme"
+  "peerDependencies": {
+
+  },
+  "scripts": {
+    "build": "yarn run lint && yarn run clean:dist && cross-env NODE_ENV=production rollup -c",
+    "clean:dist": "rimraf dist",
+    "watch": "rollup -cw",
+    "dev": "rollup -cw",
+    "lint": "tslint '{src,tests}/**/*.{ts,tsx}' --fix",
+    "test": "",
+    "release": "yarn run build && standard-version"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@types/classnames": "^2.2.7",
+    "@types/jest": "24.0.12",
+    "@types/node": "12.0.0",
+    "@types/react": "16.8.17",
+    "@types/react-dom": "16.8.4",
+    "@types/styled-components": "^4.1.14",
+    "@types/styled-system": "^4.1.3",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^5.2.0",
+    "postcss-import": "^12.0.1",
+    "postcss-nested": "^4.1.2",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.11.3",
+    "rollup-plugin-babel-minify": "^8.0.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-typescript2": "^0.21.0",
+    "standard-version": "^6.0.1",
+    "styled-components": "^4.2.0",
+    "tslint": "^5.16.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "3.3.4000"
+  }
 }

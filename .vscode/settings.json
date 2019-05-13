@@ -1,5 +1,8 @@
 {
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "javascript.preferences.quoteStyle": "double",
-  "typescript.preferences.quoteStyle": "double"
+  "typescript.preferences.quoteStyle": "double",
+  "files.associations": {
+    "*.css": "postcss"
+  }
 }

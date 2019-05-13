@@ -1,36 +1,33 @@
 # VicUI
 
-A component-based UI Library & Design System built from ground up.
+A component-based UI Library built from ground up.
 
 **UNDER EARLY DEVELOPMENT**
 
 ## Features
 
-### Core
-
-- PostCSS with only nesting enabled
-- Expose CSS variables for customization
-- Default light & dark themes provided
-
-### React
-
-- Wrappers around core package
+- **PostCSS** with only nesting enabled
+- Expose **CSS Variables** for easy customization and extension
+- Default **light & dark** themes provided
+- React Wrappers around core package
 - Supercharged with [styled-system](https://styled-system.com)
-- Easy interoperatability with CSS
 - Written in TypeScript
-- Preview via [Storybook](https://storybook.js.org)
+
+## Use
+
+`yarn add vicui`
+
+If CSS is only what you want, import `vicui/dist/vicui.css` only. 
 
 ## Preview
 
-IMPORTANT: `yarn link` from `react` to `core`
-
 ```shell
 
-# Develop core
-yarn dev-core
+# Develop with Storybook
+yarn storybook
 
-# Develop react
-yarn dev-react
+# Build bundle and css
+yarn build
 
 ```
 
@@ -39,7 +36,7 @@ yarn dev-react
 - [x] Button
 - [x] Card
 - [x] Tag
-- [ ] Dropdown
+- [x] Dropdown
 - [ ] Layout
 - [x] Input
 
