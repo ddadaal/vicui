@@ -4,27 +4,29 @@ A component-based UI Library built from ground up.
 
 **UNDER EARLY DEVELOPMENT**
 
-## Features
-
-- **PostCSS** with only nesting enabled
-- Expose **CSS Variables** for easy customization and extension
-- Default **light & dark** themes provided
-- React Wrappers around core package
-- Supercharged with [styled-system](https://styled-system.com)
-- Written in TypeScript
-
-## Use
+## Installation
 
 `yarn add vicui`
 
-If CSS is only what you want, import `vicui/dist/vicui.css` only. 
+## Features
+
+- **[PostCSS](https://postcss.org/)** with **[nesting](https://github.com/postcss/postcss-nested)** support
+- Expose **[CSS Variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)** for easy customization and extension
+- Default **light & dark** themes provided
+- **React** wrapper components written in **TypeScript**
+- Supercharged with [styled-system](https://styled-system.com)
+
+## Use
+
+Not compatible with CSS Modules! CSS-in-js is recommended.
+
+1. Setup your project to support css
+2. `import "vicui/dist/vicui.css";` somewhere in your project
+3. Import React components like `import { Button, Input } from "vicui";`
 
 ## Preview
 
 ```shell
-
-# Develop with Storybook
-yarn storybook
 
 # Build bundle and css
 yarn build

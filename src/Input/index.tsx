@@ -1,10 +1,8 @@
-import styled from "styled-components";
-import { space, SpaceProps } from "styled-system";
-import "./input.css";
+import { Box, BoxProps } from "../primitives";
 import pickClass from "../utils/pickClass";
-import { Box } from "../primitives";
+import "./input.css";
 
-interface InputProps extends SpaceProps {
+interface InputProps extends BoxProps {
 
 }
 

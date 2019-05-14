@@ -1,14 +1,11 @@
-import styled from "styled-components";
-import { space, SpaceProps } from "styled-system";
-import pickClass, { WrapperComponentProps } from "../utils/pickClass";
-import { Box } from "../primitives";
+import { Box, BoxProps } from "../primitives";
+import pickClass from "../utils/pickClass";
 
-export interface CardHeaderProps extends SpaceProps {
+export interface CardHeaderProps extends BoxProps {
 
 }
 
-export const CardHeader = pickClass<CardHeaderProps>(styled(Box)<CardHeaderProps>`
-`)("card__header");
+export const CardHeader = pickClass<CardHeaderProps>(Box)("card__header");
 
 CardHeader.defaultProps = {
   px: 3,

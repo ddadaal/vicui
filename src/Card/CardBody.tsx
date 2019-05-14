@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { space, SpaceProps } from "styled-system";
 import pickClass, { WrapperComponentProps } from "../utils/pickClass";
-import { Box } from "../primitives";
+import { Box, BoxProps } from "../primitives";
 
-export interface CardBodyProps extends SpaceProps {
+export interface CardBodyProps extends BoxProps {
 
 }
 

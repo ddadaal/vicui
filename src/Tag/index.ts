@@ -1,16 +1,9 @@
-import styled from "styled-components";
-import {
-  SpaceProps, FontSizeProps, fontSize, space, ColorProps,
-  color,
-  backgroundColor, BackgroundColorProps,
-} from "styled-system";
+import { Box, BoxProps } from "../primitives";
 import pickClass from "../utils/pickClass";
 import VariantProps from "../utils/variant";
 import "./tag.css";
-import { BoxProps, Box } from "../primitives";
 
-export interface TagProps extends BoxProps,
-  VariantProps<"normal" | "info"> {
+export interface TagProps extends BoxProps, VariantProps<"normal" | "info"> {
 }
 
 export const Tag = pickClass<TagProps>(Box)("tag", (props) => props.variant);

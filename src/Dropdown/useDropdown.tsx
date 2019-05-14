@@ -15,7 +15,7 @@ export function useDropdown(defaultOpen: boolean = false): DropdownControl {
 
   const [open, setOpen] = useState(defaultOpen);
 
-  // the event of toggle must be stopped to prevent it from reaching window
+  // the event of toggle must be prevented from reaching window
   // where window would close the menu
   const wrappedSetOpen = useCallback((open: boolean) => (e?: StoppableEvent) => {
     if (e) {

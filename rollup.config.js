@@ -35,7 +35,8 @@ export default {
   plugins,
   external: [
     ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {})
+    ...Object.keys(pkg.peerDependencies || {}),
+    "react",
   ],
   input: './src/index.ts',
   output: [{
