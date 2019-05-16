@@ -37,5 +37,3 @@ Button.defaultProps = {
   variant: "default",
   p: 2,
 };
-
-export default Button;

@@ -11,5 +11,3 @@ export const DropdownHeader = pickClass<DropdownHeaderProps>(Box)("dropdown__hea
 DropdownHeader.defaultProps = {
   as: "h6",
 };
-
-export default DropdownHeader;

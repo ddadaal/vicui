@@ -37,6 +37,7 @@ export default {
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
     "react",
+    "react-dom",
   ],
   input: './src/index.ts',
   output: [{

@@ -12,5 +12,3 @@ Input.defaultProps = {
   as: "input",
   p: 2,
 };
-
-export default Input;

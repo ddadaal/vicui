@@ -11,5 +11,3 @@ export const CardBody = pickClass<CardBodyProps>(Box)("card__body");
 CardBody.defaultProps = {
   p: 3,
 };
-
-export default CardBody;

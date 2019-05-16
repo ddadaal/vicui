@@ -14,5 +14,3 @@ DropdownItem.defaultProps = {
   as: "a",
   active: false,
 };
-
-export default DropdownItem;

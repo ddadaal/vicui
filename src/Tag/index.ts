@@ -14,5 +14,3 @@ Tag.defaultProps = {
   p: 1,
   as: "span",
 };
-
-export default Tag;

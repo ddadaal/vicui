@@ -14,5 +14,3 @@ export const VuThemeProvider = pickClass<Props>("div")("theme", (props: Props) =
 VuThemeProvider.defaultProps = {
   dark: false,
 };
-
-export default VuThemeProvider;

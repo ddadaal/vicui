@@ -1,7 +1,7 @@
 import React, { forwardRef, PropsWithChildren, useRef } from "react";
 import pickClass from "../utils/pickClass";
 import { Box, BoxProps } from "../primitives";
-import DropdownMenu from "./DropdownMenu";
+import { DropdownMenu } from "./DropdownMenu";
 
 type MenuAlignment = "left" | "right";
 
@@ -31,5 +31,3 @@ Dropdown.defaultProps = {
   open: false,
   menuAlignment: "left",
 };
-
-export default Dropdown;

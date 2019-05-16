@@ -10,5 +10,3 @@ export const DropdownDivider = pickClass<DropdownDividerProps>(Box)("dropdown__d
 DropdownDivider.defaultProps = {
 
 };
-
-export default DropdownDivider;

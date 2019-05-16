@@ -11,5 +11,3 @@ CardHeader.defaultProps = {
   px: 3,
   py: 2,
 };
-
-export default CardHeader;

@@ -5,3 +5,4 @@ export * from "./Card";
 export * from "./Tag";
 export * from "./Input";
 export * from "./Dropdown";
+export * from "./Link";

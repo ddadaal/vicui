@@ -127,4 +127,7 @@
   --dropdown-divider-color: var(--color-gray);
   --dropdown-header-color: var(--color-dark);
   --dropdown-header-padding: 8px 20px;
+
+  /* link */
+  --link-color: var(--color-primary);
 }

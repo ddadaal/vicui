@@ -9,5 +9,3 @@ export interface CardProps extends BoxProps {
 }
 
 export const Card = pickClass<CardProps>(Box)("card");
-
-export default Card;

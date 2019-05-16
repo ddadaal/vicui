@@ -13,5 +13,3 @@ export const DropdownMenu = pickClass<DropdownMenuProps>(Box)("dropdown__menu", 
 DropdownMenu.defaultProps = {
   show: true,
 };
-
-export default DropdownMenu;
