@@ -5,11 +5,10 @@ interface StoppableEvent {
   stopPropagation(): void;
 }
 
-export interface DropdownControl {
-  open: boolean;
-  setOpen: (open: boolean) => (e: StoppableEvent) => void;
-  toggle: (e: StoppableEvent) => void;
-}
+export type DropdownControl = [
+  boolean, // open
+  (e?: StoppableEvent, nextValue?: boolean) => void // toggle
+];
 
 export function useDropdown(defaultOpen: boolean = false): DropdownControl {
 
@@ -17,27 +16,20 @@ export function useDropdown(defaultOpen: boolean = false): DropdownControl {
 
   // the event of toggle must be prevented from reaching window
   // where window would close the menu
-  const wrappedSetOpen = useCallback((open: boolean) => (e?: StoppableEvent) => {
-    if (e) {
-      e.stopPropagation();
+
+  const toggle = useCallback((e?: StoppableEvent, nextValue?: boolean) => {
+    if (e) { e.stopPropagation(); }
+    if (typeof nextValue !== "undefined") {
+      setOpen(nextValue);
+    } else {
+      setOpen((current) => !current);
     }
-    setOpen(open);
   }, [setOpen]);
 
-  const toggle = useCallback((e: StoppableEvent) => {
-    wrappedSetOpen(!open)(e);
-  }, [open, wrappedSetOpen]);
-
-  const close = useCallback((e: MouseEvent | TouchEvent) => {
-    setOpen(false);
-  }, [setOpen]);
+  const close = (e: MouseEvent | TouchEvent) => toggle(e, false);
 
   useEventListener(window, "click", close);
   useEventListener(window, "touchstart", close);
 
-  return {
-    toggle,
-    setOpen: wrappedSetOpen,
-    open,
-  };
+  return [open, toggle];
 }

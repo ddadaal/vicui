@@ -13,11 +13,11 @@ export interface DropdownProps extends BoxProps {
 }
 
 export const Dropdown = pickClass<DropdownProps>(
-  ({ children, open, trigger, className, menuAlignment }) => {
+  ({ children, open, trigger, ...props }) => {
 
     return (
       <Box
-        className={className}
+        {...props as any}
       >
         {trigger}
         <DropdownMenu show={open}>
